@@ -14,42 +14,42 @@ Welcome to the Secure Spaces repository! This project aims to provide a secure s
         <tr>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://krishnacheemalapati.github.io/">
-                    <img src="https://media.licdn.com/dms/image/C4D03AQFtFuImghMOrA/profile-displayphoto-shrink_400_400/0/1620689364413?e=1706140800&v=beta&t=AtS2lAoZoyLGrrI1VXLJPwv5Sw2iHLAmSkK1caO8EhM" class="contributor-image" alt="Krishna Cheemalapati"/>
+                    <img src="./Team-Pictures/Krishna.png"/>
                     <br />
                     <span class="contributor-name">Krishna Cheemalapati</span>
                 </a>
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/chloech314">
-                    <img src="https://avatars.githubusercontent.com/u/113308864?v=4" class="contributor-image" alt="Chloe Cheung"/>
+                    <img src="./Team-Pictures/Chloe.png"/>
                     <br />
                     <span class="contributor-name">Chloe Cheung</span>
                 </a>
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/ArsalKhan1">
-                    <img src="https://media.licdn.com/dms/image/D5603AQG2Qs2mu_CSoQ/profile-displayphoto-shrink_400_400/0/1681334343347?e=1706140800&v=beta&t=L2zaxWfNN_t27mqblDfmaSO3HWeKlQ-Mt_VvLgGAX6k" class="contributor-image" alt="Arsal Khan"/>
+                    <img src="./Team-Pictures/Arsal.png"/>
                     <br />
                     <span class="contributor-name">Arsal Khan</span>
                 </a>
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/anishalatchman">
-                    <img src="https://avatars.githubusercontent.com/u/94577880?v=4" class="contributor-image" alt="Anisha Latchman"/>
+                    <img src="./Team-Pictures/Anisha.png"/>
                     <br />
                     <span class="contributor-name">Anisha Latchman</span>
                 </a>
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/Ajinkya-B">
-                    <img src="https://avatars.githubusercontent.com/u/58915063?v=4" class="contributor-image" alt="Ajinkya Bhosale"/>
+                    <img src="./Team-Pictures/AJ.png"/>
                     <br />
                     <span class="contributor-name">Ajinkya Bhosale</span>
                 </a>
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/Jkolyakov">
-                    <img src="https://avatars.githubusercontent.com/u/48739340?v=4" class="contributor-image" alt="Jacob Kolyakov"/>
+                    <img src="./Team-Pictures/Jacob.png"/>
                     <br />
                     <span class="contributor-name">Jacob Kolyakov</span>
                 </a>
