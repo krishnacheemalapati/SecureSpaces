@@ -28,7 +28,7 @@ Welcome to the Secure Spaces repository! This project aims to provide a secure s
             </td>
             <td class="contributor-cell" align="center" valign="top" width="14.28%">
                 <a href="https://github.com/ArsalKhan1">
-                    <img src="https://avatars.githubusercontent.com/u/68356777?v=4" class="contributor-image" alt="Arsal Khan"/>
+                    <img src="https://media.licdn.com/dms/image/D5603AQG2Qs2mu_CSoQ/profile-displayphoto-shrink_400_400/0/1681334343347?e=1706140800&v=beta&t=L2zaxWfNN_t27mqblDfmaSO3HWeKlQ-Mt_VvLgGAX6k" class="contributor-image" alt="Arsal Khan"/>
                     <br />
                     <span class="contributor-name">Arsal Khan</span>
                 </a>
