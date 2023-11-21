@@ -9,23 +9,6 @@ Welcome to the Secure Spaces repository! This project aims to provide a secure s
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<style>
-    .contributor-cell {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .contributor-image {
-        width: 100px;
-        border-radius: 50%;
-    }
-
-    .contributor-name {
-        margin-top: 5px;
-        font-weight: bold;
-    }
-</style>
-
 <table>
     <tbody>
         <tr>
