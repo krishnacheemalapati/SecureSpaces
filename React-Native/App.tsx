@@ -11,8 +11,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import HomeScreen from './HomeScreen';
-import LoginScreen from './LoginScreen';
+import HomeScreen from './pages/HomeScreen';
+import LoginScreen from './pages/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 

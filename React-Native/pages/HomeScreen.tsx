@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View, Button, StyleSheet} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 function HomeScreen({navigation}: any): JSX.Element {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
