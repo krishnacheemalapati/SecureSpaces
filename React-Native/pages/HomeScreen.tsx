@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Text, View, Button, StyleSheet} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import GenericButton from '../components/GenericButton.tsx';
 
 function HomeScreen({navigation}: any): JSX.Element {
   useEffect(() => {
@@ -9,9 +10,9 @@ function HomeScreen({navigation}: any): JSX.Element {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-      <Button
-        title="Login Gandujiya (गांडू लॉगिन करें)"
-        onPress={() => navigation.push('Login')}
+      <GenericButton
+        text="Onboarding"
+        onPress={() => navigation.push('Onboarding')}
       />
     </View>
   );

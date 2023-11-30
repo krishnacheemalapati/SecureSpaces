@@ -13,6 +13,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import HomeScreen from './pages/HomeScreen';
 import LoginScreen from './pages/LoginScreen';
+import OnboardingScreen from './pages/OnboardingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ function App(): JSX.Element {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       </Stack.Navigator>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar
