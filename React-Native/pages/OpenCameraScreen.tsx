@@ -3,13 +3,12 @@ import {Text, View, Button, StyleSheet} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import GenericButton from '../components/GenericButton.tsx';
 
-function HomeScreen({navigation}: any): JSX.Element {
+function OpenCameraScreen({navigation}: any): JSX.Element {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Open Camera Screen</Text>
       <GenericButton
-        text="OpenCamera"
-        onPress={() => navigation.push('OpenCamera')}
+        text="Badoom"
       />
     </View>
   );
@@ -23,4 +22,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default OpenCameraScreen;

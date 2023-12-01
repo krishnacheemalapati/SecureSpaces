@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, View, Button, StyleSheet, Image} from 'react-native';
 import GenericButton from '../components/GenericButton.tsx';
+import SplashScreen from 'react-native-splash-screen';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 function OnboardingScreen({navigation}: any): JSX.Element {
   const [curStep, setCurStep] = useState(0);
@@ -24,6 +26,11 @@ function OnboardingScreen({navigation}: any): JSX.Element {
         buttons: ['Get Started']
     }
   ]
+
+  useEffect(() => {
+      SplashScreen.hide();
+    }, []);
+
   return (
     <View style={styles.container}>
         <View style={styles.innerContainer}>
@@ -40,11 +47,11 @@ function OnboardingScreen({navigation}: any): JSX.Element {
             <View style={styles.buttonContainer}>
             {curStep < 2 ?
                 <View style={styles.buttonNav}>
-                    <GenericButton text="Skip"  type="secondary" width={120} onPress={() => setCurStep(2)}/>
-                    <GenericButton text="Next"  type="primary" width={120} onPress={() => setCurStep(curStep + 1)}/>
+                    <GenericButton text="Skip"  type="secondary" width={120} onPress={() => setCurStep(2)} />
+                    <GenericButton text="Next"  type="primary" width={120} onPress={() => setCurStep(curStep + 1)} />
                 </View>
             :
-                <GenericButton text="Get Started"  type="primary" width={160}/>
+                <GenericButton text="Get Started"  type="primary" width={160} onPress={() => navigation.navigate('Home')} />
             }
             </View>
         </View>
