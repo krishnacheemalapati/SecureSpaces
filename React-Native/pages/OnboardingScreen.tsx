@@ -75,7 +75,7 @@ function OnboardingScreen({navigation}: any): JSX.Element {
               text="Get Started"
               type="primary"
               width={160}
-              onPressIn={() => navigation.navigate('OpenCamera')}
+              onPressIn={() => navigation.navigate('Home')}
             />
           )}
         </View>
