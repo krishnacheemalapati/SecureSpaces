@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
-import {Text, View, Button, StyleSheet} from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
-import GenericButton from '../components/GenericButton.tsx';
+import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import GenericButton from '../components/GenericButton';
 
 function HomeScreen({navigation}: any): JSX.Element {
   return (
