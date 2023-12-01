@@ -6,6 +6,7 @@ function GenericButton({
   text,
   type,
   onPress,
+  onPressIn,
   width,
   activeOpacity,
 }: any): JSX.Element {
@@ -16,6 +17,7 @@ function GenericButton({
         type={type}
         // style={styles.button}
         onPress={onPress}
+        onPressIn={onPressIn}
         width={width}
         activeOpacity={activeOpacity}>
         {text}

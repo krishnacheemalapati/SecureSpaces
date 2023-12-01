@@ -61,13 +61,13 @@ function OnboardingScreen({navigation}: any): JSX.Element {
                 text="Skip"
                 type="secondary"
                 width={120}
-                onPress={() => setCurStep(2)}
+                onPressIn={() => setCurStep(2)}
               />
               <GenericButton
                 text="Next"
                 type="primary"
                 width={120}
-                onPress={() => setCurStep(curStep + 1)}
+                onPressIn={() => setCurStep(curStep + 1)}
               />
             </View>
           ) : (
@@ -75,7 +75,7 @@ function OnboardingScreen({navigation}: any): JSX.Element {
               text="Get Started"
               type="primary"
               width={160}
-              onPress={() => navigation.navigate('Home')}
+              onPressIn={() => navigation.navigate('OpenCamera')}
             />
           )}
         </View>
