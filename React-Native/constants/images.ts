@@ -1,6 +1,7 @@
 import alarmMat from '../assets/images/alarmmat.png';
 import computer from '../assets/images/computer.png';
 import logo from '../assets/images/logo.png';
+import qrCodeExample from '../assets/images/qr-code-example.png';
 import computerIcon from '../assets/icons/computer.svg';
 import help from '../assets/icons/help.svg';
 import lock from '../assets/icons/lock.svg';
@@ -15,6 +16,7 @@ export const images = {
   alarmMat,
   computer,
   logo,
+  qrCodeExample,
   computerIcon,
   help,
   lock,

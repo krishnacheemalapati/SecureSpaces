@@ -14,6 +14,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './pages/HomeScreen';
 import LoginScreen from './pages/LoginScreen';
 import OnboardingScreen from './pages/OnboardingScreen';
+import OpenCameraScreen from './pages/OpenCameraScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +27,17 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator
+        initialRouteName="Onboarding"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{animation: 'slide_from_right'}}
+        />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="OpenCamera" component={OpenCameraScreen} />
       </Stack.Navigator>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar
