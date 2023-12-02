@@ -1,30 +1,34 @@
 import React from 'react';
-import {View, Image, StyleSheet, Pressable} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 
 import {images} from '../constants/images';
 
-function Header({navigation}: any): JSX.Element {
+function Header({}: any): JSX.Element {
   return (
-    <View style={styles.container}>
-      <Pressable onPress={() => navigation.push('login')}>
-        <Image style={styles.icon} source={images.help} />
-      </Pressable>
-      <Pressable onPress={() => navigation.push('login')}>
-        <Image style={styles.icon} source={images.settings} />
-      </Pressable>
+    <View style={styles.header}>
+      <View style={styles.iconBar}>
+        <Image style={styles.largeImage} source={images.help} />
+        <Image style={styles.largeImage} source={images.settings} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'F7F3DF',
+  header: {
+    backgroundColor: '#ECE2B2',
+    height: 60,
+    alignSelf: 'flex-start',
+    width: '100%',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 18,
   },
-  icon: {
-    backgroundColor: '00314B',
+  iconBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
   },
 });
 

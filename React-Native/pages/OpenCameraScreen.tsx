@@ -41,7 +41,7 @@ function OpenCamera({navigation}: any): JSX.Element {
             <GenericButton
               container={styles.buttonTouchable}
               text="Or connect manually"
-              onPress={() => navigation.push('Onboarding')} //TODO: Replace destination
+              onPress={() => navigation.push('Lock')} //TODO: Replace destination
             />
           }
         />

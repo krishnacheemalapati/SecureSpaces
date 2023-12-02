@@ -1,15 +1,13 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import GenericButton from '../components/GenericButton';
-// import {images} from '../constants/images';
+import {images} from '../constants/images';
+import Header from '../components/Header';
 
 function HomeScreen({navigation}: any): JSX.Element {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Image style={styles.largeImage} source={images.help} width={30} />
-        <Image style={styles.largeImage} source={images.settings} />
-      </View>
+      <Header />
       <View style={styles.innerContainer}>
         <View style={styles.instructionContainer}>
           <Text style={styles.largeText}>
@@ -18,7 +16,7 @@ function HomeScreen({navigation}: any): JSX.Element {
           <Text style={styles.description}>
             It should look something like this
           </Text>
-          {/* <Image style={styles.largeImage} source={images.qrCodeExample} /> */}
+          <Image style={styles.largeImage} source={images.qrCodeExample} />
         </View>
 
         <View style={styles.buttonContainer}>
@@ -41,14 +39,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F3DF',
     display: 'flex',
     height: '100%',
-  },
-  header: {
-    backgroundColor: '#ECE2B2',
-    height: 60,
-    alignSelf: 'flex-start',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
   },
   innerContainer: {
     width: '80%',

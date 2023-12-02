@@ -15,6 +15,7 @@ import HomeScreen from './pages/HomeScreen';
 import LoginScreen from './pages/LoginScreen';
 import OnboardingScreen from './pages/OnboardingScreen';
 import OpenCameraScreen from './pages/OpenCameraScreen';
+import LockScreen from './pages/LockScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ function App(): JSX.Element {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
         <Stack.Screen name="OpenCamera" component={OpenCameraScreen} />
+        <Stack.Screen name="Lock" component={LockScreen} />
       </Stack.Navigator>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar
