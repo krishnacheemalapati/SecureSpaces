@@ -9,13 +9,14 @@ function GenericButton({
   onPressIn,
   width,
   activeOpacity,
+  container,
 }: any): JSX.Element {
   return (
-    <View style={styles.container}>
+    <View style={container}>
       <ThemedButton
         name="rick"
         type={type}
-        // style={styles.button}
+        style={styles.button}
         onPress={onPress}
         onPressIn={onPressIn}
         width={width}

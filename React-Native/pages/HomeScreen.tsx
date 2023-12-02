@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import GenericButton from '../components/GenericButton';
-import {images} from '../constants/images';
+// import {images} from '../constants/images';
 
 function HomeScreen({navigation}: any): JSX.Element {
   return (
@@ -14,7 +14,7 @@ function HomeScreen({navigation}: any): JSX.Element {
           <Text style={styles.description}>
             It should look something like this
           </Text>
-          <Image style={styles.largeImage} source={images.qrCodeExample} />
+          {/* <Image style={styles.largeImage} source={images.qrCodeExample} /> */}
         </View>
 
         <View style={styles.buttonContainer}>

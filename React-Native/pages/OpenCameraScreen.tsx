@@ -1,61 +1,53 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, Linking} from 'react-native';
+import {Text, View, StyleSheet, Pressable, Image} from 'react-native';
 import {BarCodeReadEvent} from 'react-native-camera';
 // import GenericButton from '../components/GenericButton';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
+import {useIsFocused} from '@react-navigation/core';
+import GenericButton from '../components/GenericButton';
+
+import {images} from '../constants/images';
 
 function OpenCamera({navigation}: any): JSX.Element {
+  const isFocused = useIsFocused();
   const parseAndProcess = (event: BarCodeReadEvent) => {
     const qrString: string = event.data;
-    const wcRegex = new RegExp('^wc:.+$');
-    Linking.canOpenURL(qrString).then(supported => {
-      if (supported) {
-        Linking.openURL(qrString);
-      } else {
-        console.log("Don't know how to open URI: " + qrString);
-      }
-    });
-    if (wcRegex.test(qrString)) {
-      // walletConnectContext2.setUri(qrString);
-      // refBottomSheetModal.current?.close();
-    }
+    console.log(qrString);
+    navigation.push('Onboarding'); //TODO: Change destination
   };
+
   return (
     <View style={styles.container}>
-      {/* <Text>Home Screen</Text>
-      <GenericButton
-        text="OpenCamera"
-        onPress={() => navigation.push('OpenCamera')}
-      /> */}
-      <QRCodeScanner
-        onRead={e => {
-          parseAndProcess(e);
-        }}
-        // cameraStyle={{
-        //   height: win.height,
-        //   width: win.width,
-        //   borderRadius: 100,
-        // }}
-        // cameraContainerStyle={{
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        // }}
-        showMarker={true}
-        flashMode={RNCamera.Constants.FlashMode.torch}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to{' '}
-            <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-            your computer and scan the QR code.
-          </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
-      />
+      {isFocused ? (
+        <QRCodeScanner
+          onRead={e => {
+            parseAndProcess(e);
+          }}
+          showMarker={true}
+          flashMode={RNCamera.Constants.FlashMode.torch}
+          topContent={
+            <View style={styles.topContainer}>
+              <Pressable
+                style={styles.backArrow}
+                onPressIn={() => navigation.goBack()}>
+                <Image source={images.back_arrow} />
+              </Pressable>
+              <Text style={styles.largeText}>ScanQRCode</Text>
+              <View />
+            </View>
+          }
+          bottomContent={
+            <GenericButton
+              container={styles.buttonTouchable}
+              text="Or connect manually"
+              onPress={() => navigation.push('Onboarding')} //TODO: Replace destination
+            />
+          }
+        />
+      ) : (
+        <></>
+      )}
     </View>
   );
 }
@@ -81,13 +73,27 @@ const styles = StyleSheet.create({
     color: 'rgb(0,122,255)',
   },
   buttonTouchable: {
-    padding: 16,
+    // marginTop: 20,
+    // padding: 16,
   },
-  // cameraStyle: {
-  //   height: win.height,
-  //   width: win.width,
-  //   borderRadius: 100,
-  // },
+  largeText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#00314B',
+    textAlign: 'center',
+  },
+  topContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: -50,
+    width: '100%',
+  },
+  backArrow: {
+    position: 'absolute',
+    left: 20,
+  },
 });
 
 export default OpenCamera;
