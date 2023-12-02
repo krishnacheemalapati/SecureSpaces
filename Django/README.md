@@ -6,6 +6,33 @@ Welcome to the Backend directory of Secure Spaces! This directory contains the c
 
 The backend plays a crucial role in coordinating the functionalities of Secure Spaces. It handles user authentication, manages the connection between the mobile app and the alarm mat, and processes requests related to locking, unlocking, and alarm events.
 
+## Helpful Commands
+
+# Create virtual environment
+python3 -m venv venv
+# Activate virtual environment
+source venv/bin/activate 
+# Start new app (in outer petpal folder with venv activated)
+python3 ./manage.py startapp pets
+# Install package requirments (in outer petpal folder)
+pip3 install -r requirements.txt
+# Commit model changes to database (in outer petpal folder)
+python3 ./manage.py makemigrations
+# Push model changes to database (in outer petpal folder)
+python3 ./manage.py migrate
+# Run server (AFTER migrations are applied)
+python3 ./manage.py runserver
+# Create a user
+python3 ./manage.py createsuperuser --email admin@example.com --username admin
+# View database schemas (in outer petpal folder)
+python3 ./manage.py dbshell
+.schema accounts_user
+.quit
+# Save database into json
+python3 ./manage.py dumpdata > mock_data.json
+# Load data from json into database
+python3 ./manage.py loaddata mock_data.json
+
 ## Setup Instructions
 
 To set up the backend of Secure Spaces, follow these steps:
