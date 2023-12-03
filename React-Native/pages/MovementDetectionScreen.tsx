@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import {images} from '../constants/images';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -37,11 +37,17 @@ function MovementDetectionScreen({navigation}: any): JSX.Element {
           <Text style={styles.description}>
             {warningData[warningType].description}
           </Text>
-          <GenericButton
-            text={'Dismiss'}
-            width={260}
-            onPressIn={() => navigation.navigate('Lock')}
-          />
+          {warningData[warningType].buttons?.map(item => {
+            return (
+              <View style={styles.optionButton}>
+                <GenericButton
+                  text={item}
+                  width={260}
+                  onPressIn={() => setWarningType('danger')}
+                />
+              </View>
+            );
+          })}
         </View>
       </View>
       <Footer locked={true} warning={true} />
@@ -86,6 +92,9 @@ const styles = StyleSheet.create({
     color: '#00314B',
     textAlign: 'center',
     marginBottom: 60,
+  },
+  optionButton: {
+    margin: 8,
   },
 });
 
