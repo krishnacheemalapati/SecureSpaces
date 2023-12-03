@@ -3,6 +3,7 @@ import computer from '../assets/images/computer.png';
 import logo from '../assets/images/logo.png';
 import qrCodeExample from '../assets/images/qr-code-example.png';
 import footer from '../assets/images/footer.png';
+import footerWarning from '../assets/images/footer-warning.png';
 import check from '../assets/icons/check.png';
 import helpYellow from '../assets/icons/help-yellow.png';
 import computerIcon from '../assets/icons/computer.png';
@@ -22,6 +23,7 @@ export const images = {
   logo,
   qrCodeExample,
   footer,
+  footerWarning,
   check,
   helpYellow,
   computerIcon,

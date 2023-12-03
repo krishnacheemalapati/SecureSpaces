@@ -2,20 +2,23 @@ import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
 import {images} from '../constants/images';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-function LockScreen({}: any): JSX.Element {
+function LockScreen({navigation}: any): JSX.Element {
   const [locked, setLocked] = useState(false);
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.innerContainer}>
-        <View style={styles.instructionContainer}>
+        <Pressable
+          style={styles.instructionContainer}
+          onPress={() => navigation.navigate('MovementDetection')}>
           <Image style={styles.checkImage} source={images.check} />
           <Text style={styles.description}>You are connected to</Text>
           <Text style={styles.largeTextBold}>Robarts Commons,</Text>
           <Text style={styles.largeText}>Floor 5, Desk 37</Text>
-        </View>
+        </Pressable>
 
         <Pressable
           style={styles.buttonContainer}
@@ -27,20 +30,7 @@ function LockScreen({}: any): JSX.Element {
           <Text style={styles.lockText}>Tap and hold to lock</Text>
         </Pressable>
       </View>
-
-      <View style={styles.footerContainer}>
-        <Image style={styles.footerImage} source={images.footer} />
-        {locked && (
-          <View style={styles.timeText}>
-            <View style={styles.footerText}>
-              <Text style={styles.footerDescription}>LOCKED FOR</Text>
-              <Image style={styles.checkImage} source={images.helpYellow} />
-            </View>
-
-            <Text style={styles.footerLargeText}>29:59</Text>
-          </View>
-        )}
-      </View>
+      <Footer locked={locked} />
     </View>
   );
 }
@@ -103,36 +93,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     flex: 5,
-  },
-  footerContainer: {
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-  },
-  footerImage: {
-    width: '100%',
-  },
-  timeText: {
-    position: 'absolute',
-    bottom: 30,
-    textAlign: 'center',
-    alignItems: 'center',
-    width: '100%',
-  },
-  footerText: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  footerDescription: {
-    color: 'white',
-    fontSize: 14,
-    marginRight: 8,
-  },
-  footerLargeText: {
-    color: 'white',
-    fontSize: 30,
-    fontWeight: 'bold',
   },
 });
 
