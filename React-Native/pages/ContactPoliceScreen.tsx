@@ -4,23 +4,22 @@ import {images} from '../constants/images';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-function LockScreen({navigation}: any): JSX.Element {
-  const [locked, setLocked] = useState(false);
+function ContactPoliceScreen({navigation}: any): JSX.Element {
+  const [locked, setLocked] = useState(true);
   return (
     <View style={styles.container}>
-      <Header />
+      <Header warning={true} />
 
       <View style={styles.innerContainer}>
-        <Pressable
-          style={styles.instructionContainer}
-          onPress={() => {
-            navigation.navigate('MovementDetection');
-          }}>
-          <Image style={styles.checkImage} source={images.check} />
-          <Text style={styles.description}>You are connected to</Text>
-          <Text style={styles.largeTextBold}>Robarts Commons,</Text>
-          <Text style={styles.largeText}>Floor 5, Desk 37</Text>
-        </Pressable>
+        <View style={styles.instructionContainer}>
+          <Image style={styles.checkImage} source={images.redWarning} />
+          <Text style={styles.largeTextBold}>
+            Campus police has been notified
+          </Text>
+          <Text style={styles.description}>
+            They will meet you at your space to file a missing items report.
+          </Text>
+        </View>
 
         <Pressable
           style={styles.buttonContainer}
@@ -32,7 +31,7 @@ function LockScreen({navigation}: any): JSX.Element {
           <Text style={styles.lockText}>Tap and hold to lock</Text>
         </Pressable>
       </View>
-      <Footer locked={locked} />
+      <Footer locked={locked} warning={true} />
     </View>
   );
 }
@@ -98,4 +97,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LockScreen;
+export default ContactPoliceScreen;

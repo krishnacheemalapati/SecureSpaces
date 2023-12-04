@@ -16,13 +16,22 @@ function Footer({locked, warning}: any): JSX.Element {
         source={warning ? images.footerWarning : images.footer}
       />
       {locked && (
-        <View style={styles.timeText}>
-          <View style={styles.footerText}>
-            <Text style={styles.footerDescription}>LOCKED FOR</Text>
-            <Image style={styles.checkImage} source={images.helpYellow} />
-          </View>
+        <View>
+          {warning ? (
+            <View style={styles.timeText}>
+              <Text style={styles.warningTextBold}>Robarts Commons,</Text>
+              <Text style={styles.warningText}>Floor 5, Desk 37</Text>
+            </View>
+          ) : (
+            <View style={styles.timeText}>
+              <View style={styles.footerText}>
+                <Text style={styles.footerDescription}>LOCKED FOR</Text>
+                <Image style={styles.checkImage} source={images.helpYellow} />
+              </View>
 
-          <Text style={styles.footerLargeText}>29:59</Text>
+              <Text style={styles.footerLargeText}>29:59</Text>
+            </View>
+          )}
         </View>
       )}
     </View>
@@ -54,9 +63,23 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   checkImage: {
     marginBottom: 5,
+  },
+  warningText: {
+    color: 'white',
+    fontSize: 22,
+    textAlign: 'center',
+    fontWeight: '400',
+    fontFamily: 'Londrina Solid',
+  },
+  warningTextBold: {
+    color: 'white',
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 

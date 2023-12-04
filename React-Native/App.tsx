@@ -17,6 +17,7 @@ import OnboardingScreen from './pages/OnboardingScreen';
 import OpenCameraScreen from './pages/OpenCameraScreen';
 import LockScreen from './pages/LockScreen';
 import MovementDetectionScreen from './pages/MovementDetectionScreen';
+import ContactPoliceScreen from './pages/ContactPoliceScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,7 @@ function App(): JSX.Element {
           name="MovementDetection"
           component={MovementDetectionScreen}
         />
+        <Stack.Screen name="ContactPolice" component={ContactPoliceScreen} />
       </Stack.Navigator>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar

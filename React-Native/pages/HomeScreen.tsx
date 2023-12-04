@@ -23,6 +23,7 @@ function HomeScreen({navigation}: any): JSX.Element {
           <GenericButton
             text="Open camera"
             width={280}
+            type={'primary'}
             onPress={() => navigation.push('OpenCamera')}
           />
           <Text style={styles.linkText}>Didn't see a QR code?</Text>
