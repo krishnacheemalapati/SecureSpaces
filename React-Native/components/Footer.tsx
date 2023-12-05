@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, Image, StyleSheet, Text} from 'react-native';
-
+import CountDown from 'react-native-countdown-component';
 import {images} from '../constants/images';
+import {Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
-function Footer({locked, warning}: any): JSX.Element {
+function Footer({locked, setLocked, warning}: any): JSX.Element {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -15,7 +18,7 @@ function Footer({locked, warning}: any): JSX.Element {
         style={styles.footerImage}
         source={warning ? images.footerWarning : images.footer}
       />
-      {locked && (
+      {locked ? (
         <View>
           {warning ? (
             <View style={styles.timeText}>
@@ -29,9 +32,24 @@ function Footer({locked, warning}: any): JSX.Element {
                 <Image style={styles.checkImage} source={images.helpYellow} />
               </View>
 
-              <Text style={styles.footerLargeText}>29:59</Text>
+              <CountDown
+                until={30}
+                onFinish={() => setLocked((prevLocked: any) => !prevLocked)}
+                size={20}
+                digitTxtStyle={{color: '#00314B'}}
+                timeToShow={['M', 'S']}
+                timeLabels={{m: undefined, s: undefined}}
+              />
             </View>
           )}
+        </View>
+      ) : (
+        <View>
+          <Pressable
+            style={styles.disconnectContainer}
+            onPress={() => navigation.navigate('Home' as never)}>
+            <Text style={styles.disconnectText}>Disconnect from desk</Text>
+          </Pressable>
         </View>
       )}
     </View>
@@ -79,6 +97,19 @@ const styles = StyleSheet.create({
     fontFamily: 'LondrinaSolid-Black',
     fontSize: 24,
     textAlign: 'center',
+  },
+  disconnectText: {
+    color: '#ECE2B2',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  disconnectContainer: {
+    position: 'absolute',
+    bottom: 60,
+    padding: 5,
+    textAlign: 'center',
+    alignItems: 'center',
+    width: '100%',
   },
 });
 

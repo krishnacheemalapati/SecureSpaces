@@ -1,22 +1,27 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
-
+import {View, Image, StyleSheet, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {images} from '../constants/images';
 
 function Header({warning}: any): JSX.Element {
+  const navigation = useNavigation();
   return (
     <View style={warning ? styles.headerWarning : styles.header}>
       <View style={styles.iconBar}>
-        <Image
-          style={styles.largeImage}
-          source={images.help}
-          tintColor={warning && 'white'}
-        />
-        <Image
-          style={styles.largeImage}
-          source={images.settings}
-          tintColor={warning && 'white'}
-        />
+        <Pressable onPress={() => navigation.navigate('Help' as never)}>
+          <Image
+            style={styles.largeImage}
+            source={images.help}
+            tintColor={warning && 'white'}
+          />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate('Settings' as never)}>
+          <Image
+            style={styles.largeImage}
+            source={images.settings}
+            tintColor={warning && 'white'}
+          />
+        </Pressable>
       </View>
     </View>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
 import GenericButton from '../components/GenericButton';
 import {images} from '../constants/images';
 import Header from '../components/Header';
@@ -26,7 +26,9 @@ function HomeScreen({navigation}: any): JSX.Element {
             type={'primary'}
             onPress={() => navigation.push('OpenCamera')}
           />
-          <Text style={styles.linkText}>Didn't see a QR code?</Text>
+          <Pressable onPress={() => navigation.push('FindSpace')}>
+            <Text style={styles.linkText}>Don't see a QR code?</Text>
+          </Pressable>
         </View>
       </View>
     </View>
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
   innerContainer: {
     width: '80%',
     height: '80%',
+    marginTop: '10%',
   },
   instructionContainer: {
     display: 'flex',
@@ -61,6 +64,7 @@ const styles = StyleSheet.create({
     color: '#00314B',
     textAlign: 'center',
     marginBottom: '20%',
+    fontWeight: 'bold',
   },
   description: {
     fontSize: 16,

@@ -12,13 +12,14 @@ function GenericButton({
   container,
   disabled,
   warning,
+  style,
 }: any): JSX.Element {
   return (
     <View style={container}>
       <ThemedButton
         name="rick"
         type={type}
-        style={styles.button}
+        style={style}
         onPress={onPress}
         onPressIn={onPressIn}
         width={width}
@@ -42,7 +43,6 @@ function GenericButton({
             ? '#00314B'
             : '#000000'
         }
-        backgroundShadow={'F7F3DF'}
         raiseLevel={0}
         textSize={18}>
         {text}

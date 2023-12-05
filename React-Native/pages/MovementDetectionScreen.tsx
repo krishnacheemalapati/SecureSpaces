@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 import GenericButton from '../components/GenericButton';
 
 function MovementDetectionScreen({navigation}: any): JSX.Element {
-  const [warningType, setWarningType] = useState('alert');
-  const [alarmOn, setAlarmOn] = useState(true);
+  const [warningType, setWarningType] = useState<String>('alert');
+  const [alarmOn] = useState(true);
 
   const warningData = {
     alert: {
@@ -32,9 +32,9 @@ function MovementDetectionScreen({navigation}: any): JSX.Element {
       buttons: [
         {
           id: 1,
-          name: alarmOn ? 'Mute phone alarm' : 'Alarm Muted',
+          name: 'Dismiss',
           onPress: () => {
-            setAlarmOn(false);
+            navigation.navigate('Lock');
           },
           type: 'secondary',
         },
@@ -61,7 +61,12 @@ function MovementDetectionScreen({navigation}: any): JSX.Element {
               source={warningData[warningType].icon}
             />
           </Pressable>
-          <Text style={styles.largeTextBold}>
+          <Text
+            style={
+              warningType === 'danger'
+                ? styles.largeTextRed
+                : styles.largeTextBold
+            }>
             {warningData[warningType].instruction}
           </Text>
           <Text style={styles.description}>
@@ -118,6 +123,15 @@ const styles = StyleSheet.create({
     fontFamily: 'LondrinaSolid-Black',
     fontSize: 32,
     color: '#865E00',
+    textAlign: 'center',
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  largeTextRed: {
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#F93A3A',
     textAlign: 'center',
     marginBottom: 20,
   },

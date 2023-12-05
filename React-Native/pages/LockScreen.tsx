@@ -14,7 +14,9 @@ function LockScreen({navigation}: any): JSX.Element {
         <Pressable
           style={styles.instructionContainer}
           onPress={() => {
-            navigation.navigate('MovementDetection');
+            if (locked) {
+              navigation.navigate('MovementDetection');
+            }
           }}>
           <Image style={styles.checkImage} source={images.check} />
           <Text style={styles.description}>You are connected to</Text>
@@ -29,10 +31,12 @@ function LockScreen({navigation}: any): JSX.Element {
             style={styles.checkImage}
             source={!locked ? images.unlocked : images.timedLock}
           />
-          <Text style={styles.lockText}>Tap and hold to lock</Text>
+          <Text style={styles.lockText}>
+            {locked ? 'Tap to unlock' : 'Tap to lock'}
+          </Text>
         </Pressable>
       </View>
-      <Footer locked={locked} />
+      <Footer locked={locked} setLocked={setLocked} />
     </View>
   );
 }

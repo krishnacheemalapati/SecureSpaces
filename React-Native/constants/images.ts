@@ -16,6 +16,9 @@ import timedLock from '../assets/icons/timed_lock.png';
 import unlocked from '../assets/icons/unlocked.png';
 import warning from '../assets/icons/warning.png';
 import back_arrow from '../assets/icons/back_arrow.png';
+import small_qr from '../assets/images/small-qr-code.png';
+import down_arrow from '../assets/icons/down_arrow.png';
+import close from '../assets/icons/close.png';
 
 export const images = {
   alarmMat,
@@ -36,4 +39,7 @@ export const images = {
   warning,
   settings,
   back_arrow,
+  small_qr,
+  down_arrow,
+  close,
 };
