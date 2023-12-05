@@ -163,10 +163,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: '#00314B',
     textAlign: 'center',
-    fontWeight: 'bold',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Black',
     fontSize: 16,
     fontWeight: '400',
     color: '#00314B',
@@ -208,7 +206,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     marginHorizontal: 85,
-    fontWeight: 'bold',
     color: '#00314B',
   },
   content: {

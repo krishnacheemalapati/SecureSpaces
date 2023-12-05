@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#00314B',
@@ -127,7 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 42,
     color: '#00314B',
     textAlign: 'center',
-    fontWeight: '900',
   },
   topContainer: {
     display: 'flex',
@@ -143,14 +141,12 @@ const styles = StyleSheet.create({
     left: 20,
   },
   settingTitle: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 16,
     fontWeight: 'bold',
     color: '#00314B',
     marginBottom: 5,
   },
   settingsDescription: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 12,
     color: '#000',
     marginBottom: 5,

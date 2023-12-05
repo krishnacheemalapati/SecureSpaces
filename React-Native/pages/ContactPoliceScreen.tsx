@@ -105,14 +105,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   largeText: {
+    fontFamily: 'LondrinaSolid-Black',
     fontSize: 30,
     color: '#00314B',
     textAlign: 'center',
     marginBottom: '20%',
   },
   largeTextBold: {
+    fontFamily: 'LondrinaSolid-Black',
     fontSize: 30,
-    fontWeight: 'bold',
     color: '#F93A3A',
     textAlign: 'center',
   },

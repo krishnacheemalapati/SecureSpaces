@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
     width: '95%',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#00314B',

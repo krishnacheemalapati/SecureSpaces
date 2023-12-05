@@ -125,12 +125,10 @@ const styles = StyleSheet.create({
     color: '#865E00',
     textAlign: 'center',
     marginBottom: 20,
-    fontWeight: 'bold',
   },
   largeTextRed: {
     fontFamily: 'LondrinaSolid-Black',
     fontSize: 32,
-    fontWeight: 'bold',
     color: '#F93A3A',
     textAlign: 'center',
     marginBottom: 20,

@@ -161,14 +161,12 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#00314B',
     textAlign: 'center',
   },
   errorText: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#FF0101',
@@ -187,7 +185,6 @@ const styles = StyleSheet.create({
     fontSize: 42,
     color: '#00314B',
     textAlign: 'center',
-    fontWeight: '900',
     // flexWrap: 'nowrap',
     // flex: 1,
   },
