@@ -70,15 +70,14 @@ const styles = StyleSheet.create({
   },
   warningText: {
     color: 'white',
-    fontSize: 22,
+    fontFamily: 'LondrinaSolid-Light',
+    fontSize: 24,
     textAlign: 'center',
-    fontWeight: '400',
-    fontFamily: 'Londrina Solid',
   },
   warningTextBold: {
     color: 'white',
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 24,
     textAlign: 'center',
   },
 });

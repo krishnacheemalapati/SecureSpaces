@@ -43,7 +43,8 @@ function GenericButton({
             : '#000000'
         }
         backgroundShadow={'F7F3DF'}
-        raiseLevel={0}>
+        raiseLevel={0}
+        textSize={18}>
         {text}
       </ThemedButton>
     </View>

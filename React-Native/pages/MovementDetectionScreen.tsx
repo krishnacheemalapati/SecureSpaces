@@ -85,7 +85,7 @@ function MovementDetectionScreen({navigation}: any): JSX.Element {
           })}
         </View>
       </View>
-      <Footer locked={true} warning={warningType === 'danger'} />
+      <Footer locked={true} warning={true} />
     </View>
   );
 }
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   largeTextBold: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 32,
     color: '#865E00',
     textAlign: 'center',
     marginBottom: 20,

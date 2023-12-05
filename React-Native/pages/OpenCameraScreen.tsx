@@ -6,6 +6,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import {useIsFocused} from '@react-navigation/core';
 import GenericButton from '../components/GenericButton';
+import Header from '../components/Header';
 
 import {images} from '../constants/images';
 
@@ -19,6 +20,7 @@ function OpenCamera({navigation}: any): JSX.Element {
 
   return (
     <View style={styles.container}>
+      <Header />
       {isFocused ? (
         <QRCodeScanner
           onRead={e => {
@@ -40,8 +42,9 @@ function OpenCamera({navigation}: any): JSX.Element {
           bottomContent={
             <GenericButton
               container={styles.buttonTouchable}
-              text="Or connect manually"
+              text="Or Enter ID Manually"
               type={'primary'}
+              width={280}
               onPress={() => navigation.push('Lock')} //TODO: Replace destination
             />
           }
@@ -58,6 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#F7F3DF',
   },
   centerText: {
     flex: 1,
@@ -78,8 +82,8 @@ const styles = StyleSheet.create({
     // padding: 16,
   },
   largeText: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 40,
     color: '#00314B',
     textAlign: 'center',
   },
@@ -88,7 +92,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: -50,
+    marginTop: -110,
     width: '100%',
   },
   backArrow: {

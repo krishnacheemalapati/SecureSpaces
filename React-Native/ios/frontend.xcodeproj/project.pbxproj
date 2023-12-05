@@ -14,6 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-frontend-frontendTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-frontend-frontendTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		183C570BA3FF408A92F1B7F2 /* LondrinaSolid-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC0C13EAB4934D9BBBD23AF0 /* LondrinaSolid-Black.ttf */; };
+		859F20E66E5147AE891DCD3F /* LondrinaSolid-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35B4D6D612DA4819BBE79803 /* LondrinaSolid-Light.ttf */; };
+		6A27CBCDDD5A4023BA0F0AF4 /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A800FA5024BF4CC8BEBF1084 /* LondrinaSolid-Regular.ttf */; };
+		B4437F43C99A4891B73B814B /* LondrinaSolid-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C9A2BEDB2F246E89EBE88F8 /* LondrinaSolid-Thin.ttf */; };
+		FCAB4545F88147ADB5CB1913 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D65FD8791E04AF5B6DF82A2 /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = frontend/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-frontend-frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontend-frontendTests.release.xcconfig"; path = "Target Support Files/Pods-frontend-frontendTests/Pods-frontend-frontendTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		BC0C13EAB4934D9BBBD23AF0 /* LondrinaSolid-Black.ttf */ = {isa = PBXFileReference; name = "LondrinaSolid-Black.ttf"; path = "../assets/fonts/LondrinaSolid-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		35B4D6D612DA4819BBE79803 /* LondrinaSolid-Light.ttf */ = {isa = PBXFileReference; name = "LondrinaSolid-Light.ttf"; path = "../assets/fonts/LondrinaSolid-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A800FA5024BF4CC8BEBF1084 /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; name = "LondrinaSolid-Regular.ttf"; path = "../assets/fonts/LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C9A2BEDB2F246E89EBE88F8 /* LondrinaSolid-Thin.ttf */ = {isa = PBXFileReference; name = "LondrinaSolid-Thin.ttf"; path = "../assets/fonts/LondrinaSolid-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0D65FD8791E04AF5B6DF82A2 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../assets/fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				D84F0B26172E43FF95C8B7BB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +158,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		D84F0B26172E43FF95C8B7BB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				BC0C13EAB4934D9BBBD23AF0 /* LondrinaSolid-Black.ttf */,
+				35B4D6D612DA4819BBE79803 /* LondrinaSolid-Light.ttf */,
+				A800FA5024BF4CC8BEBF1084 /* LondrinaSolid-Regular.ttf */,
+				9C9A2BEDB2F246E89EBE88F8 /* LondrinaSolid-Thin.ttf */,
+				0D65FD8791E04AF5B6DF82A2 /* OFL.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +268,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				183C570BA3FF408A92F1B7F2 /* LondrinaSolid-Black.ttf in Resources */,
+				859F20E66E5147AE891DCD3F /* LondrinaSolid-Light.ttf in Resources */,
+				6A27CBCDDD5A4023BA0F0AF4 /* LondrinaSolid-Regular.ttf in Resources */,
+				B4437F43C99A4891B73B814B /* LondrinaSolid-Thin.ttf in Resources */,
+				FCAB4545F88147ADB5CB1913 /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

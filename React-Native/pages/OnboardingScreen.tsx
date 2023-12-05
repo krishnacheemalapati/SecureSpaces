@@ -103,16 +103,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   largeImage: {
-    marginBottom: '20%',
+    marginBottom: '15%',
   },
   largeText: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 44,
     color: '#00314B',
     textAlign: 'center',
+    marginBottom: '5%',
+    width: '95%',
   },
   description: {
-    fontSize: 16,
+    fontFamily: 'LondrinaSolid-Light',
+    fontSize: 18,
     fontWeight: '500',
     color: '#00314B',
     textAlign: 'center',
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
   dotNav: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: '10%',
+    marginTop: '30%',
     width: '30%',
     justifyContent: 'space-between',
   },

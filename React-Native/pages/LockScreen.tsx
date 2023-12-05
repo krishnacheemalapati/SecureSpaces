@@ -66,14 +66,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   largeText: {
-    fontSize: 30,
+    fontFamily: 'LondrinaSolid-Light',
+    fontSize: 38,
     color: '#00314B',
     textAlign: 'center',
     marginBottom: '20%',
   },
   largeTextBold: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 40,
     color: '#00314B',
     textAlign: 'center',
   },

@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     marginBottom: '20%',
   },
   largeText: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'LondrinaSolid-Black',
+    fontSize: 32,
     color: '#00314B',
     textAlign: 'center',
     marginBottom: '20%',
