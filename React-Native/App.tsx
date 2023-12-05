@@ -23,6 +23,7 @@ import HelpScreen from './pages/HelpScreen';
 import SettingsScreen from './pages/SettingsScreen';
 
 import {SettingsProvider} from './contexts/SettingsContext';
+import DangerScreen from './pages/DangerScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,9 +44,7 @@ function App(): JSX.Element {
         remoteMessage.notification,
       );
       if (navigationContainerRef.current) {
-        navigationContainerRef.current.navigate(remoteMessage.data?.page, {
-          alarm: remoteMessage.data?.alarm,
-        });
+        navigationContainerRef.current.navigate(remoteMessage.data?.page);
       }
     });
 
@@ -58,9 +57,7 @@ function App(): JSX.Element {
             'Notification caused app to open from quit state:',
             remoteMessage.notification,
           );
-          navigationContainerRef.current.navigate(remoteMessage.data?.page, {
-            alarm: remoteMessage.data?.alarm,
-          });
+          navigationContainerRef.current.navigate(remoteMessage.data?.page);
         }
         setLoading(false);
       });
@@ -91,6 +88,7 @@ function App(): JSX.Element {
           <Stack.Screen name="ContactPolice" component={ContactPoliceScreen} />
           <Stack.Screen name="Help" component={HelpScreen} />
           <Stack.Screen name="Settings" component={SettingsScreen} />
+          <Stack.Screen name="Danger" component={DangerScreen} />
         </Stack.Navigator>
         <SafeAreaView style={backgroundStyle}>
           <StatusBar

@@ -5,8 +5,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import GenericButton from '../components/GenericButton';
 
-function MovementDetectionScreen({navigation}: any): JSX.Element {
-  const [warningType] = useState<String>('alert');
+function DangerScreen({navigation}: any): JSX.Element {
+  const [warningType] = useState<String>('danger');
   const [alarmOn] = useState(true);
 
   const warningData = {
@@ -55,7 +55,9 @@ function MovementDetectionScreen({navigation}: any): JSX.Element {
 
       <View style={styles.innerContainer}>
         <View style={styles.instructionContainer}>
-          <Pressable onPress={() => navigation.navigate('Danger')}>
+          <Pressable
+          //   onPress={() => setWarningType('danger')}
+          >
             <Image
               style={styles.warningImage}
               source={warningData[warningType].icon}
@@ -147,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MovementDetectionScreen;
+export default DangerScreen;
