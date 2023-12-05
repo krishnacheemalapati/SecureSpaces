@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+apply plugin: "com.google.gms.google-services"
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -85,9 +86,9 @@ android {
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
-            storePassword 'android'
+            storePassword 'PurrfectDesign'
             keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            keyPassword 'PurrfectDesign'
         }
     }
     buildTypes {
@@ -119,6 +120,22 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    // in below line we are adding configurations to our project.
+    configurations.all {
+    // in below line we are adding strategy for each dependency and requesting the details 
+    resolutionStrategy.eachDependency {DependencyResolveDetails details ->
+        // on below line we are getting to see the details using requested. 
+        def requested = details.requested
+        // in below line we are requesting a group. 
+        if (requested.group == 'com.android.support'){
+            // on below line we are checking if the request is a group and checking if it starts with com.android.support.
+            if(!requested.name.startsWith("multidex")){
+                // if the requested name starts with multi dex then we are displaying the use version which is given below. 
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+} 
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

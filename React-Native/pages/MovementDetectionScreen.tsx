@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
 import {images} from '../constants/images';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import GenericButton from '../components/GenericButton';
 
-function MovementDetectionScreen({navigation}: any): JSX.Element {
+function MovementDetectionScreen({navigation, alarm}: any): JSX.Element {
   const [warningType, setWarningType] = useState<String>('alert');
   const [alarmOn] = useState(true);
+
+  useEffect(() => {
+    if (alarm === 'alert' || alarm === 'danger') {
+      setWarningType(alarm);
+    }
+  });
 
   const warningData = {
     alert: {

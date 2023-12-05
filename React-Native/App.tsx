@@ -5,12 +5,12 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-
+import messaging from '@react-native-firebase/messaging';
 import HomeScreen from './pages/HomeScreen';
 import LoginScreen from './pages/LoginScreen';
 import OnboardingScreen from './pages/OnboardingScreen';
@@ -28,16 +28,51 @@ const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
+  const [loading, setLoading] = useState(true);
+  const [initialRoute, setInitialRoute] = useState('Onboarding');
+  const navigationContainerRef = useRef();
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  useEffect(() => {
+    // Assume a message-notification contains a "type" property in the data payload of the screen to open
 
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log(
+        'Notification caused app to open from background state:',
+        remoteMessage.notification,
+      );
+      if (navigationContainerRef.current) {
+        navigationContainerRef.current.navigate(remoteMessage.data?.page, {
+          alarm: remoteMessage.data?.alarm,
+        });
+      }
+    });
+
+    // Check whether an initial notification is available
+    messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        if (remoteMessage) {
+          console.log(
+            'Notification caused app to open from quit state:',
+            remoteMessage.notification,
+          );
+          navigationContainerRef.current.navigate(remoteMessage.data?.page, {
+            alarm: remoteMessage.data?.alarm,
+          });
+        }
+        setLoading(false);
+      });
+  });
+  if (loading) {
+    return <></>;
+  }
   return (
     <SettingsProvider>
-      <NavigationContainer>
+      <NavigationContainer ref={navigationContainerRef}>
         <Stack.Navigator
-          initialRouteName="Onboarding"
+          initialRouteName={initialRoute}
           screenOptions={{headerShown: false}}>
           <Stack.Screen
             name="Home"
