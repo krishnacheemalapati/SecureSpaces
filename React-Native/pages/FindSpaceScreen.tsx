@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
-// import GenericButton from '../components/GenericButton';
 import {images} from '../constants/images';
 import Header from '../components/Header';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -64,7 +63,7 @@ function FindSpaceScreen({navigation}: any): JSX.Element {
   const renderContent = (section: any): JSX.Element => {
     return (
       <View style={styles.content}>
-        <Text>{section.content}</Text>
+        <Text style={styles.contentText}>{section.content}</Text>
       </View>
     );
   };
@@ -167,6 +166,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   description: {
+    fontFamily: 'LondrinaSolid-Black',
     fontSize: 16,
     fontWeight: '400',
     color: '#00314B',
@@ -224,6 +224,11 @@ const styles = StyleSheet.create({
   },
   buttonTouchable: {
     marginTop: '15%',
+  },
+  contentText: {
+    fontFamily: 'LondrinaSolid-Black',
+    color: '#00314B',
+    fontSize: 16,
   },
 });
 
