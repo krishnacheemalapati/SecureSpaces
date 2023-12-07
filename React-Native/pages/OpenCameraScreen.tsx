@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderStyle: 'solid',
     borderRadius: 25,
+    color: '#00314B',
   },
   middleContainer: {
     height: '60%',

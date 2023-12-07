@@ -33,7 +33,7 @@ function Footer({locked, setLocked, warning}: any): JSX.Element {
               </View>
 
               <CountDown
-                until={30}
+                until={1800}
                 onFinish={() => setLocked((prevLocked: any) => !prevLocked)}
                 size={20}
                 digitTxtStyle={{color: '#00314B'}}

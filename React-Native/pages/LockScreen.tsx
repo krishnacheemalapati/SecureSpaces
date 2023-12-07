@@ -19,9 +19,16 @@ function LockScreen({navigation}: any): JSX.Element {
             }
           }}>
           <Image style={styles.checkImage} source={images.check} />
-          <Text style={styles.description}>You are connected to</Text>
-          <Text style={styles.largeTextBold}>Robarts Commons,</Text>
-          <Text style={styles.largeText}>Floor 5, Desk 37</Text>
+          <Pressable
+            onPress={() => {
+              if (locked) {
+                navigation.navigate('Danger');
+              }
+            }}>
+            <Text style={styles.description}>You are connected to</Text>
+            <Text style={styles.largeTextBold}>Robarts Commons,</Text>
+            <Text style={styles.largeText}>Floor 5, Desk 37</Text>
+          </Pressable>
         </Pressable>
 
         <Pressable

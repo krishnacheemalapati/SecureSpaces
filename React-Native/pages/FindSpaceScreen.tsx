@@ -9,28 +9,33 @@ const SECTIONS = [
   {
     title: 'Robarts Commons',
     content: [
-      'Floor 2, Desk 3\n',
-      'Floor 2, Desk 5\n',
-      'Floor 2, Desk 9\n',
-      'Floor 2, Desk 13\n',
-      'Floor 2, Desk 15\n',
+      'Floor 2, Desk 3',
+      'Floor 2, Desk 5',
+      'Floor 2, Desk 9',
+      'Floor 2, Desk 13',
+      'Floor 2, Desk 15',
     ],
+    id: 0,
   },
   {
     title: 'Myhal Commons',
-    content: '',
+    content: [],
+    id: 1,
   },
   {
     title: 'Bahen Commons',
-    content: '',
+    content: [],
+    id: 2,
   },
   {
     title: 'Gerstein Commons',
-    content: '',
+    content: [],
+    id: 3,
   },
   {
     title: 'UC Commmons',
-    content: '',
+    content: [],
+    id: 4,
   },
 ];
 function FindSpaceScreen({navigation}: any): JSX.Element {
@@ -41,7 +46,12 @@ function FindSpaceScreen({navigation}: any): JSX.Element {
     return (
       <View>
         {section.title === 'Robarts Commons' ? (
-          <View style={styles.header}>
+          <View
+            style={
+              activeSections.some(item => item === section.id)
+                ? styles.headerOpen
+                : styles.header
+            }>
             <Text numberOfLines={1} style={styles.headerText}>
               {section.title}
             </Text>
@@ -64,7 +74,9 @@ function FindSpaceScreen({navigation}: any): JSX.Element {
   const renderContent = (section: any): JSX.Element => {
     return (
       <View style={styles.content}>
-        <Text>{section.content}</Text>
+        {section.content?.map((text: any) => {
+          return <Text style={styles.contentText}>{text}</Text>;
+        })}
       </View>
     );
   };
@@ -203,6 +215,15 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 20,
   },
+  headerOpen: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+    paddingVertical: 15,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+  },
   headerText: {
     fontFamily: 'LondrinaSolid-Black',
     textAlign: 'center',
@@ -212,8 +233,18 @@ const styles = StyleSheet.create({
     color: '#00314B',
   },
   content: {
-    padding: 20,
-    backgroundColor: '#EDEDED',
+    backgroundColor: '#FFF',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  contentText: {
+    color: '#00314B',
+    fontSize: 15,
+    borderTopWidth: 1,
+    borderTopColor: '#D5C990',
+    paddingVertical: 10,
+    paddingLeft: 18,
   },
   accordianContainer: {
     marginTop: 20,
