@@ -71,11 +71,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   footerDescription: {
     color: 'white',
     fontSize: 14,
     marginRight: 8,
+    bottom: 2,
   },
   footerLargeText: {
     color: 'white',

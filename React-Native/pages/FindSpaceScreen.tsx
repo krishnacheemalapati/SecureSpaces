@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
-// import GenericButton from '../components/GenericButton';
 import {images} from '../constants/images';
 import Header from '../components/Header';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -176,7 +175,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: '#00314B',
     textAlign: 'center',
-    fontWeight: 'bold',
   },
   description: {
     fontSize: 16,
@@ -229,7 +227,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     marginHorizontal: 85,
-    fontWeight: 'bold',
     color: '#00314B',
   },
   content: {
@@ -255,6 +252,11 @@ const styles = StyleSheet.create({
   },
   buttonTouchable: {
     marginTop: '15%',
+  },
+  contentText: {
+    fontFamily: 'LondrinaSolid-Black',
+    color: '#00314B',
+    fontSize: 16,
   },
 });
 
