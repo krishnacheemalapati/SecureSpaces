@@ -8,58 +8,79 @@ The backend plays a crucial role in coordinating the functionalities of Secure S
 
 ## Helpful Commands
 
-# Create virtual environment
-python3 -m venv venv
-# Activate virtual environment
-source venv/bin/activate 
-# Start new app (in outer petpal folder with venv activated)
-python3 ./manage.py startapp pets
-# Install package requirments (in outer petpal folder)
-pip3 install -r requirements.txt
-# Commit model changes to database (in outer petpal folder)
-python3 ./manage.py makemigrations
-# Push model changes to database (in outer petpal folder)
-python3 ./manage.py migrate
-# Run server (AFTER migrations are applied)
-python3 ./manage.py runserver
-# Create a user
-python3 ./manage.py createsuperuser --email admin@example.com --username admin
-# View database schemas (in outer petpal folder)
-python3 ./manage.py dbshell
-.schema accounts_user
-.quit
-# Save database into json
-python3 ./manage.py dumpdata > mock_data.json
-# Load data from json into database
-python3 ./manage.py loaddata mock_data.json
+Before we begin, let's go over some helpful commands that you'll need to run during the installation process:
+
+- Activate virtual environment:
+    ```bash
+    source venv/bin/activate
+    ```
+
+- Commit model changes to the database (in the outer folder):
+    ```bash
+    python3 ./manage.py makemigrations
+    ```
+
+- Push model changes to the database (in the outer folder):
+    ```bash
+    python3 ./manage.py migrate
+    ```
+
+- Run the server (after migrations are applied):
+    ```bash
+    python3 ./manage.py runserver
+    ```
+
+- Create a user:
+    ```bash
+    python3 ./manage.py createsuperuser --email admin@example.com --username admin
+    ```
+
+- View database schemas (in the outer petpal folder):
+    ```bash
+    python3 ./manage.py dbshell
+    .schema accounts_user
+    .quit
+    ```
+
+- Save the database into JSON:
+    ```bash
+    python3 ./manage.py dumpdata > mock_data.json
+    ```
+
+- Load data from JSON into the database:
+    ```bash
+    python3 ./manage.py loaddata mock_data.json
+    ```
 
 ## Setup Instructions
 
-To set up the backend of Secure Spaces, follow these steps:
+To set up the backend of Secure Spaces, follow these steps (you can type these into your command line or terminal):
 
-1. Clone this repository to your local machine.
-    ```bash
-    git clone [repository_url]
-    ```
+1. Clone this repository to your local machine:
+     ```bash
+     git clone https://github.com/krishnacheemalapati/SecureSpaces.git
+     ```
 
-2. Navigate to the backend directory.
-    ```bash
-    cd backend
-    ```
+2. Navigate to the backend directory:
+     ```bash
+     cd /Django/secureSpaces/
+     ```
 
-3. Install dependencies using pip.
-    ```bash
-    pip install -r requirements.txt
-    ```
+3. Install dependencies using pip:
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-4. Run the Django development server.
-    ```bash
-    python manage.py runserver
-    ```
+4. Run the Django development server:
+     ```bash
+     python manage.py runserver
+     ```
 
-    The backend should now be running locally. Ensure it is accessible to the frontend and hardware components.
+     The backend should now be running locally. Make sure it is accessible to the frontend and hardware components.
 
 ## Folder Structure
+
+The backend directory has the following structure:
 
 - `src`: Contains the source code for the Django application.
 - `api`: Defines API endpoints for communication with the frontend and hardware.
@@ -68,10 +89,14 @@ To set up the backend of Secure Spaces, follow these steps:
 
 ## Dependencies
 
-The backend relies on several dependencies, including Django and other Python libraries. Ensure all dependencies are installed before running the server.
+The backend relies on several dependencies, including Django and other Python libraries. Before running the server, ensure that all dependencies are installed.
 
 ## Contribution
 
-Feel free to contribute to the development of the backend. Create a branch, make your changes, and submit a pull request for review.
+If you'd like to contribute to the development of the backend, follow these steps:
+
+1. Create a branch.
+2. Make your changes.
+3. Submit a pull request for review.
 
 Thank you for contributing to Secure Spaces backend!

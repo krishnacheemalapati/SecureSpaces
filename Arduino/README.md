@@ -21,65 +21,44 @@ The hardware components are responsible for interfacing with the alarm mat, dete
 - 1x 9V Battery
 - Wiring attachment for the battery
 
-## Setup Instructions
+## Arduino Setup Guide for Bathroom Scale Load Cell Modules
+## Table of Contents
+- [Identifying the Middle Wire](#identifying-the-middle-wire)
+- [Connecting Four Load Cells](#connecting-four-load-cells)
+- [Mounting the Load Cell to a Wooden Board](#mounting-the-load-cell-to-a-wooden-board)
+- [Arduino Code for Reading Weight Values](#arduino-code-for-reading-weight-values)
+- [Folder Structure](#folder-structure)
+- [Components](#components)
+- [Dependencies](#dependencies)
+- [Contribution](#contribution)
 
-To set up the hardware components of Secure Spaces, follow these steps:
+## Identifying the Middle Wire
+To begin, it is important to identify the middle wire of the load cell. This can be done using a multimeter. The resistance value between the outer wires is double the resistance between the middle wire and the outer wires. The resistance between the white and black wires should be roughly 2k ohms.
 
-1. Clone this repository to your local machine.
-    ```bash
-    git clone [repository_url]
-    ```
+## Connecting Four Load Cells
+To connect four 50kg bathroom scale load cell modules to an Arduino, follow these steps:
+1. Form a loop by linking the same color outer wires (white and black) of the four load cells.
+2. Validate the wiring by measuring the resistance of both diagonals (red wires). Both of them should be around 2k ohms.
+3. Connect the middle cable (red) of one of the diagonals to the E+ and E- outputs of the HX711 module.
+4. Connect the other diagonal to the A+ and A- inputs of the HX711 module.
+5. Connect the GND of the HX711 module to the Arduino GND and VCC to the Arduino 5V pin.
+6. Connect the DT and SCK of the HX711 module to any of the Arduino digital IO pins.
 
-2. Navigate to the hardware directory.
-    ```bash
-    cd hardware
-    ```
+## Mounting the Load Cell to a Wooden Board
+To mount the 50kg bathroom scale load cell module to a wooden board, follow these steps:
+1. Attach the load cell to the board in a way that allows the inner part to flex relative to the rest of the unit. This requires adding a spacer between the board and the outer rim of the load cell.
+2. Use a 3D printed mounting frame or find a suitable mounting solution.
+3. Securely mount the load cell to the wooden board using the chosen method.
 
-3. Open the Arduino sketch file in your preferred Arduino IDE.
-
-4. Upload the sketch to your Arduino microcontroller.
-
-5. [INSERT ALARM MAT ASSEMBLY INSTRUCTIONS HERE]
-
-## Folder Structure
-
-- src: Contains the Arduino sketch file for the hardware components.
-- libraries: Includes any external libraries or dependencies used in the Arduino sketch.
-
-## Components
-
-- Arduino Uno w/ Wi-Fi Module: The brain of the hardware system, responsible for processing inputs from the alarm mat and sending data to the backend. It acts as the central control unit, allowing communication between the physical components and the software.
-
-- Breadboard: A solderless prototyping board used for creating and testing electronic circuits. It allows for easy connection and disconnection of components, making it convenient for prototyping and experimenting with different circuit configurations.
-
-- Wiring: The process of connecting electrical components together using conductive wires. Wiring is crucial for establishing electrical connections between different components, enabling the flow of electricity and data throughout the system.
-
-- Jump Wires: Pre-made wires with connectors on both ends, used to make temporary connections between components on a breadboard or other circuit boards. Jump wires provide flexibility in connecting various components without the need for soldering, allowing for quick and easy modifications during the prototyping phase.
-
-- Half-Bridge Load Sensors (4x, at least 10kg): Sensors used to measure weight or force applied to a surface. These sensors provide a voltage output proportional to the applied load. In this project, the load sensors are used to detect pressure on the alarm mat, triggering the alarm system when a certain threshold is exceeded.
-
-- Sheet of Wood: A flat piece of wood that serves as the base for the hardware system. It provides stability and support for mounting the various components, ensuring that they are securely positioned and protected.
-
-- Multi-meter: A device used to measure electrical properties such as voltage, current, and resistance. It is an essential tool for troubleshooting and verifying the functionality of the electrical components in the system.
-
-- LED Light Board: A board with multiple LED lights that can be controlled to display different patterns or colors. In this project, the LED light board is used to visually indicate the alarm status or provide feedback to the user.
-
-- 1K Ohm Resistors (16x): Resistors with a resistance value of 1 kilohm, used to limit the flow of current in a circuit. They are commonly used to protect components from excessive current and ensure proper functioning of the circuit.
-
-- Wire Connectors: Devices used to join or terminate electrical wires, ensuring a secure and reliable connection. Wire connectors are important for maintaining the integrity of the electrical connections, preventing loose or faulty connections that could lead to malfunctioning of the system.
-
-- Electrical Tape and Double-sided Tape: Tapes used for insulation, securing wires, or mounting components. Electrical tape is used to insulate exposed wires, preventing short circuits and ensuring electrical safety. Double-sided tape is used for mounting components onto surfaces, providing a secure and stable attachment.
-
-- Wire Strippers: Tools used to remove the insulation from the ends of electrical wires. They are essential for preparing wires for connection, ensuring a clean and proper electrical contact.
-
-- 9V Battery and Wiring Mount: A battery used as a power source for the hardware system, along with a mount to secure the battery and wiring. The 9V battery provides portable and reliable power for the system, while the wiring mount ensures that the battery is securely held in place and connected to the circuit.
-
-## Dependencies
-
-The hardware components may have dependencies on specific Arduino libraries. Ensure all necessary libraries are installed before uploading the sketch to the Arduino.
+## Arduino Code for Reading Weight Values
+To read weight values from the HX711 module using Arduino, follow these steps:
+1. Download the "HX711_ADC" library from [GitHub](https://github.com/olkal/HX711_ADC).
+2. Extract the downloaded ZIP file and move it into your Arduino "libraries" folder.
+3. Open the Calibration example that came with the "HX711_ADC" library in the Arduino IDE.
+4. Load the example code to your Arduino.
+5. Open the Arduino Serial Monitor to view the weight values.
 
 ## Contribution
-
 Feel free to contribute to the development of the hardware components. Create a branch, make your changes, and submit a pull request for review.
 
 Thank you for contributing to Secure Spaces hardware!
