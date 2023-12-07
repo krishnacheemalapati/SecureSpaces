@@ -128,10 +128,15 @@ Several key decisions were made in the development of this system:
 
 To set up and run Secure Spaces:
 
-1. Clone the repository to your local machine.
-2. Follow the instructions in the respective `React-Native` (app), `Django` (backend / server), and `Arduino` (hardware) directories for setup.
-3. Ensure all dependencies are installed and configured.
-4. Run the system locally or deploy it to your preferred hosting service.
+1. If you have not used React Native before follow the instructions [here](https://reactnative.dev/docs/environment-setup) for setup ignoring the steps that actually create the app
+2.  Clone the repository to your local machine.
+3. In your terminal `cd React-Native` to ensure you are in the React-Native folder in the project
+4. Once there, run `npm install`
+5. To run this on an emulator Android Studio is required. Once installed follow the instructions [here](https://developer.android.com/studio/run/managing-avds) to create a device then run `npm run android`
+6. To run on a physical device follow the instructions listed [here](https://reactnative.dev/docs/running-on-device)
+7. Run `npm run android`
+
+**Note:** This was built using Node v20.10.0 and currently only has full functionality on android devices 
 
 Feel free to explore the codebase, contribute, and provide feedback!
 
