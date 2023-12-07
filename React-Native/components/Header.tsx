@@ -1,30 +1,56 @@
 import React from 'react';
 import {View, Image, StyleSheet, Pressable} from 'react-native';
-
+import {useNavigation} from '@react-navigation/native';
 import {images} from '../constants/images';
 
-function Header({navigation}: any): JSX.Element {
+function Header({warning}: any): JSX.Element {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <Pressable onPress={() => navigation.push('login')}>
-        <Image style={styles.icon} source={images.help} />
-      </Pressable>
-      <Pressable onPress={() => navigation.push('login')}>
-        <Image style={styles.icon} source={images.settings} />
-      </Pressable>
+    <View style={warning ? styles.headerWarning : styles.header}>
+      <View style={styles.iconBar}>
+        <Pressable onPress={() => navigation.navigate('Help' as never)}>
+          <Image
+            style={styles.largeImage}
+            source={images.help}
+            tintColor={warning && 'white'}
+          />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate('Settings' as never)}>
+          <Image
+            style={styles.largeImage}
+            source={images.settings}
+            tintColor={warning && 'white'}
+          />
+        </Pressable>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'F7F3DF',
+  header: {
+    backgroundColor: '#ECE2B2',
+    height: 60,
+    alignSelf: 'flex-start',
+    width: '100%',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 18,
   },
-  icon: {
-    backgroundColor: '00314B',
+  headerWarning: {
+    backgroundColor: '#F93A3A',
+    height: 60,
+    alignSelf: 'flex-start',
+    width: '100%',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 18,
+  },
+  iconBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
   },
 });
 

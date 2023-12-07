@@ -9,17 +9,42 @@ function GenericButton({
   onPressIn,
   width,
   activeOpacity,
+  container,
+  disabled,
+  warning,
+  style,
 }: any): JSX.Element {
   return (
-    <View style={styles.container}>
+    <View style={container}>
       <ThemedButton
         name="rick"
         type={type}
-        // style={styles.button}
+        style={style}
         onPress={onPress}
         onPressIn={onPressIn}
         width={width}
-        activeOpacity={activeOpacity}>
+        activeOpacity={activeOpacity}
+        disabled={disabled}
+        backgroundColor={
+          type === 'primary'
+            ? !warning
+              ? '#00314B'
+              : '#F93A3A'
+            : type === 'secondary'
+            ? !warning
+              ? '#F7F3DF'
+              : '#DFD8CC'
+            : '#DFD8CC'
+        }
+        textColor={
+          type === 'primary'
+            ? '#fff'
+            : type === 'secondary'
+            ? '#00314B'
+            : '#000000'
+        }
+        raiseLevel={0}
+        textSize={18}>
         {text}
       </ThemedButton>
     </View>

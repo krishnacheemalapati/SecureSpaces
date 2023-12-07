@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, Pressable} from 'react-native';
 import GenericButton from '../components/GenericButton';
 import SplashScreen from 'react-native-splash-screen';
+import {images} from '../constants/images';
 import {useNavigation} from '@react-navigation/native';
 
-function OnboardingScreen(): JSX.Element {
+function HelpScreen(): JSX.Element {
   const navigation = useNavigation();
   const [curStep, setCurStep] = useState(0);
   const stepData = [
@@ -37,6 +38,12 @@ function OnboardingScreen(): JSX.Element {
 
   return (
     <View style={styles.container}>
+      <Pressable
+        style={styles.closeContainer}
+        onPress={() => navigation.goBack()}>
+        <Text style={styles.closeText}>Close</Text>
+        <Image source={images.close} />
+      </Pressable>
       <View style={styles.innerContainer}>
         <View style={styles.instructionContainer}>
           <Image style={styles.largeImage} source={stepData[curStep].image} />
@@ -57,13 +64,23 @@ function OnboardingScreen(): JSX.Element {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          {curStep < 2 ? (
+          {curStep === 0 && (
             <View style={styles.buttonNav}>
               <GenericButton
-                text="Skip"
+                text="Next"
+                type="primary"
+                width={120}
+                onPressIn={() => setCurStep(curStep + 1)}
+              />
+            </View>
+          )}
+          {curStep === 1 && (
+            <View style={styles.buttonNav}>
+              <GenericButton
+                text="Back"
                 type="secondary"
                 width={120}
-                onPressIn={() => setCurStep(2)}
+                onPressIn={() => setCurStep(curStep - 1)}
               />
               <GenericButton
                 text="Next"
@@ -72,13 +89,22 @@ function OnboardingScreen(): JSX.Element {
                 onPressIn={() => setCurStep(curStep + 1)}
               />
             </View>
-          ) : (
-            <GenericButton
-              text="Get Started"
-              type="primary"
-              width={160}
-              onPressIn={() => navigation.navigate('Home' as never)}
-            />
+          )}
+          {curStep === 2 && (
+            <View style={styles.buttonNav}>
+              <GenericButton
+                text="Back"
+                type="secondary"
+                width={120}
+                onPressIn={() => setCurStep(curStep - 1)}
+              />
+              <GenericButton
+                text="Close"
+                type="primary"
+                width={120}
+                onPressIn={() => navigation.goBack()}
+              />
+            </View>
           )}
         </View>
       </View>
@@ -155,6 +181,23 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
   },
+  closeContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    position: 'absolute',
+    top: 40,
+    right: 30,
+    alignItems: 'center',
+  },
+  closeText: {
+    fontFamily: 'LondrinaSolid-Light',
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#00314B',
+    textAlign: 'center',
+    marginRight: 5,
+    bottom: 2,
+  },
 });
 
-export default OnboardingScreen;
+export default HelpScreen;
