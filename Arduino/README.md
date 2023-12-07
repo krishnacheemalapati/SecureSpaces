@@ -21,7 +21,7 @@ The hardware components are responsible for interfacing with the alarm mat, dete
 - 1x 9V Battery
 - Wiring attachment for the battery
 
-## Arduino Setup Guide for Bathroom Scale Load Cell Modules
+## Arduino Setup Guide for Load Cell Modules
 ## Table of Contents
 - [Identifying the Middle Wire](#identifying-the-middle-wire)
 - [Connecting Four Load Cells](#connecting-four-load-cells)
@@ -57,6 +57,23 @@ To read weight values from the HX711 module using Arduino, follow these steps:
 3. Open the Calibration example that came with the "HX711_ADC" library in the Arduino IDE.
 4. Load the example code to your Arduino.
 5. Open the Arduino Serial Monitor to view the weight values.
+
+## Next Steps
+
+1. **Choose a suitable WiFi module**: Select a WiFi module that is compatible with Arduino, such as the ESP8266 or ESP32.
+
+2. **Connect the WiFi module to the Arduino**: Use jumper wires to connect the module's TX pin to the Arduino's RX pin and the module's RX pin to the Arduino's TX pin.
+
+3. **Install necessary libraries**: In the Arduino IDE, install the necessary libraries for the WiFi module. This may include libraries specific to the module you are using, such as the ESP8266WiFi library for ESP8266.
+
+4. **Configure the WiFi module**: In your Arduino code, configure the WiFi module to connect to your local network by providing the SSID and password. This can usually be done using the `WiFi.begin()` function.
+
+5. **Establish a connection to the Django web server**: Specify the server's IP address or domain name and the port number in the Arduino code. Use the `WiFiClient` library to create a client object and connect to the server using the `client.connect()` function.
+
+6. **Format the weight data**: Format the weight data obtained from the load cells into a suitable format, such as JSON.
+
+7. **Send the weight data to the Django web server**: Use the `client.print()` or `client.println()` functions to send the weight data to the Django web server. Include the weight data in an HTTP POST request to the desired endpoints on the Django server.
+
 
 ## Contribution
 Feel free to contribute to the development of the hardware components. Create a branch, make your changes, and submit a pull request for review.
