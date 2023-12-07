@@ -132,9 +132,9 @@ To set up and run Secure Spaces:
 2.  Clone the repository to your local machine.
 3. In your terminal `cd React-Native` to ensure you are in the React-Native folder in the project
 4. Once there, run `npm install`
-5. To run this on an emulator Android Studio is required. Once installed follow the instructions [here](https://developer.android.com/studio/run/managing-avds) to create a device then run `npm run android`
 6. To run on a physical device follow the instructions listed [here](https://reactnative.dev/docs/running-on-device)
-7. Run `npm run android`
+7. To run this on an emulator Android Studio is required. Once installed follow the instructions [here](https://developer.android.com/studio/run/managing-avds) to create a device then run `npm run android`
+8. Run `npm run android`
 
 **Note:** This was built using Node v20.10.0 and currently only has full functionality on android devices 
 
