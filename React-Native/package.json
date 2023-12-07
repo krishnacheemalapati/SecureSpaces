@@ -11,6 +11,8 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^18.7.1",
+    "@react-native-firebase/messaging": "^18.7.1",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "countdown": "^2.6.0",

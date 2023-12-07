@@ -3,8 +3,10 @@ import {Text, View, StyleSheet, Image} from 'react-native';
 import GenericButton from '../components/GenericButton';
 import SplashScreen from 'react-native-splash-screen';
 import {useNavigation} from '@react-navigation/native';
+import {PermissionsAndroid} from 'react-native';
 
 function OnboardingScreen(): JSX.Element {
+  PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
   const navigation = useNavigation();
   const [curStep, setCurStep] = useState(0);
   const stepData = [
@@ -116,7 +118,6 @@ const styles = StyleSheet.create({
     width: '95%',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#00314B',

@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     color: '#00314B',
     textAlign: 'center',
     marginBottom: '20%',
-    fontWeight: 'bold',
   },
   description: {
     fontSize: 16,

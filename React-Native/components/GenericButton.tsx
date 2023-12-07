@@ -44,7 +44,8 @@ function GenericButton({
             : '#000000'
         }
         raiseLevel={0}
-        textSize={18}>
+        textSize={18}
+        borderWidth={0}>
         {text}
       </ThemedButton>
     </View>

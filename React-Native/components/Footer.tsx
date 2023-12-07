@@ -33,7 +33,7 @@ function Footer({locked, setLocked, warning}: any): JSX.Element {
               </View>
 
               <CountDown
-                until={30}
+                until={1800}
                 onFinish={() => setLocked((prevLocked: any) => !prevLocked)}
                 size={20}
                 digitTxtStyle={{color: '#00314B'}}
@@ -71,11 +71,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   footerDescription: {
     color: 'white',
     fontSize: 14,
     marginRight: 8,
+    bottom: 2,
   },
   footerLargeText: {
     color: 'white',

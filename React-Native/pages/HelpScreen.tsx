@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     width: '95%',
   },
   description: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 18,
     fontWeight: '500',
     color: '#00314B',
@@ -190,7 +189,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   closeText: {
-    fontFamily: 'LondrinaSolid-Light',
     fontSize: 20,
     fontWeight: '500',
     color: '#00314B',

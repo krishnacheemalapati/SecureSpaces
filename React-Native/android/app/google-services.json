@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "380410798175",
+    "project_id": "spaces-f3601",
+    "storage_bucket": "spaces-f3601.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380410798175:android:5bde40e9b6cefebba8bbea",
+        "android_client_info": {
+          "package_name": "com.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7IHg6-6DBBknfE-kCWanUN1ETXYQKoLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
