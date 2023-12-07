@@ -135,6 +135,13 @@ To set up and run Secure Spaces:
 6. To run on a physical device follow the instructions listed [here](https://reactnative.dev/docs/running-on-device)
 7. To run this on an emulator Android Studio is required. Once installed follow the instructions [here](https://developer.android.com/studio/run/managing-avds) to create a device then run `npm run android`
 8. Run `npm run android`
+9. Sepcifically when running an emulator, hit the 3 dots on the right of the emulator and then in the extended controls (camera section), upload any QR code image to the wall. This will enable 
+    
+    ![image](https://github.com/krishnacheemalapati/SecureSpaces/assets/48739340/b461841d-0575-4b3c-bb5e-352bf0691f3d)
+    ![image](https://github.com/krishnacheemalapati/SecureSpaces/assets/48739340/33d85232-24d5-4eca-bb1a-589260fea66e)
+10. Also, for the emulator when attempting to manually enter the ID manually instead of the QR code make sure to enter the following ID: PRF3C-TDSGN
+
+
 
 **Note:** This was built using Node v20.10.0 and currently only has full functionality on android devices 
 
